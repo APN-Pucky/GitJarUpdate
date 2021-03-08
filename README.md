@@ -3,7 +3,7 @@ Presents a popup at the startup of a program when there is a new Github Release
 ## Usage
 build.gradle
         
-        
+```gradle
         plugins {
           id 'com.palantir.git-version' version '0.12.3'
         }
@@ -28,3 +28,4 @@ build.gradle
           }
           with jar
         }
+```
