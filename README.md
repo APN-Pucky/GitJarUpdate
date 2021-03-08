@@ -13,11 +13,11 @@ build.gradle
           maven { url "https://jitpack.io" }
         }
         dependencies {
-        	implementation 'com.github.APN-Pucky:GitJarUpdate:0.0.3'
+       	  implementation 'com.github.APN-Pucky:GitJarUpdate:0.0.3'
         }
         
         task fatJar(type: Jar) {
-	        manifest {
+	  manifest {
             attributes 'Implementation-Title': project.name,
         	  'Implementation-Version': versionDetails().lastTag,
         	  'Main-Class': 'YOUR.MAIN.CLASS.HERE'
