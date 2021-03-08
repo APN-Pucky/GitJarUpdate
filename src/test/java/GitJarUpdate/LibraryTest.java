@@ -4,11 +4,14 @@
 package GitJarUpdate;
 
 import org.junit.Test;
+
+import de.neuwirthinformatik.Alexander.GitJarUpdate.Update;
+
 import static org.junit.Assert.*;
 
 public class LibraryTest {
     @Test public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
+        Update classUnderTest = new Update();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }
 }
