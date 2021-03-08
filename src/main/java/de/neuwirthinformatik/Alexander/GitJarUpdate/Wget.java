@@ -74,7 +74,6 @@ public class Wget {
 		InputStream httpIn = null;
 		OutputStream fileOutput = null;
 		OutputStream bufferedOut = null;
-		System.out.print(urlOfFile);
 		try {
 			// check the http connection before we do anything to the fs
 			httpIn = new BufferedInputStream(new URL(urlOfFile).openStream());
@@ -108,7 +107,6 @@ public class Wget {
 		InputStream httpIn = null;
 		OutputStream fileOutput = null;
 		OutputStream bufferedOut = null;
-		System.out.print(urlOfFile);
 		try {
 			// check the http connection before we do anything to the fs
 			httpIn = new BufferedInputStream(new URL(urlOfFile).openStream());

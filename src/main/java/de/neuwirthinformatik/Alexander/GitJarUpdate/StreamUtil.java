@@ -38,10 +38,12 @@ public class StreamUtil {
 	}
 	public static void copyFile(String src, String dst)
 	{
+		if(new File(src).exists()) {
 		try {
 			Files.copy(new File(src).toPath(), new File(dst).toPath(),StandardCopyOption.REPLACE_EXISTING);
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
 		}
 	}
 	
