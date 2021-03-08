@@ -1,5 +1,5 @@
 # GitJarUpdate
-Presents a popup at the start of a program when there is a new Github Release.
+Presents a popup at the start of a program when there is a new Github Release.  Then restarts the updated program.
 ## Usage
 build.gradle
         
