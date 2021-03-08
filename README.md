@@ -36,7 +36,7 @@ At the start of your program run:
 Update.loadUpdate("PROJECTNAME-all.jar", "GITHUBUSER", "GITHUBPROJECTNAME");
 ```
 
-An example with github actions publishing jar files is ![TeXCalc](https://github.com/APN-Pucky/TeXCalc) Project
+An example with github actions publishing jar files is ![TeXCalc](https://github.com/APN-Pucky/TeXCalc).
 
 ## Note
 The Git/Manifest info is not (correctly) included if the code is run from an IDE instead of a built jar. Therefore an Update-Popup will show.
