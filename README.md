@@ -9,6 +9,7 @@ build.gradle
           id 'com.palantir.git-version' version '0.12.3'
         }
         repositories {
+	  //load repo from git via gradle
           maven { url "https://jitpack.io" }
         }
         dependencies {
