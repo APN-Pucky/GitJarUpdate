@@ -37,4 +37,4 @@ Update.loadUpdate("PROJECTNAME-all.jar", "GITHUBUSER", "GITHUBPROJECTNAME");
 ```
 
 ## Note
-The Git/Manifest info is not (correctly) included if the code is run from an IDE instead of a built jar.
+The Git/Manifest info is not (correctly) included if the code is run from an IDE instead of a built jar. Therefore an Update-Popup will show.
