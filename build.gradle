@@ -34,7 +34,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 	implementation 'org.json:json:20190722'
 }
-task fatJar(type: Jar) {
+/*task fatJar(type: Jar) {
 	manifest {
         attributes 'Implementation-Title': project.name,
         	'Implementation-Version': versionDetails().lastTag,
@@ -46,4 +46,4 @@ task fatJar(type: Jar) {
     exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
     }
     with jar
-}
+}*/
