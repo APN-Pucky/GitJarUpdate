@@ -5,6 +5,7 @@ build.gradle
         
 ```gradle
         plugins {
+	  // get git infos into Manifest
           id 'com.palantir.git-version' version '0.12.3'
         }
         repositories {
