@@ -35,3 +35,6 @@ At the start of your program run:
 ```java
 Update.loadUpdate("PROJECTNAME-all.jar", "GITHUBUSER", "GITHUBPROJECTNAME");
 ```
+
+## Note
+The Git/Manifest info is not (correctly) included if the code is run from an IDE instead of a built jar.
