@@ -44,7 +44,7 @@ public class Update {
 		String tumjson=StreamUtil.readFile(jsf).replaceAll("\n", "");
 		JSONObject tum = new JSONObject(tumjson);
 		String tum_tag_name = tum.getString("tag_name");	
-		if(!tum_tag_name.equals(Info.VERSION))
+		if(!tum_tag_name.equals(Info.VERSION) && !Info.VERSION.equals( "9999"))
 		{
 			ret += "New version: " + tum_tag_name + " available:\n";
 			ret += " - " + tum.getString("name") + "\n";
