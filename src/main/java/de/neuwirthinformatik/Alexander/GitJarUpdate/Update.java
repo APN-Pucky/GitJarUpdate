@@ -17,18 +17,18 @@ public class Update {
 
 	public static void main(String[] args)
 	{
-		loadUpdate("TeXCalc-all.jar","APN-Pucky","TeXCalc");
+		//loadUpdate("TeXCalc-all.jar","APN-Pucky","TeXCalc");
+		Version d = new Version("9999");
+		Version t = new Version("5.5.5");
+		System.out.println(d.compareTo(t));
+		
 	}
-	
-    public boolean someLibraryMethod() {
-        return true;
-    }
 	
 
     public static void loadUpdate(String fname, String github_user,String github_project)
 	{
     	StreamUtil.copyFile("new-" + fname,fname);
-		String up = checkUpdates(github_user,github_project);
+		String up = getUpdateText(github_user,github_project);
 		if(!up.equals(""))
 		{
 			int selection = JOptionPane.showConfirmDialog(null, up,"Update",JOptionPane.OK_CANCEL_OPTION,JOptionPane.WARNING_MESSAGE);
@@ -36,7 +36,7 @@ public class Update {
 		}
 	}
     
-    public static String checkUpdates(String github_user,String github_project)
+    public static boolean checkUpdates(String github_user,String github_project)
 	{
 		String ret = "";
 		String jsf = "git_jar_version.json";
@@ -44,15 +44,48 @@ public class Update {
 		String tumjson=StreamUtil.readFile(jsf).replaceAll("\n", "");
 		JSONObject tum = new JSONObject(tumjson);
 		String tum_tag_name = tum.getString("tag_name");	
-		if(!tum_tag_name.equals(Info.VERSION) && !Info.VERSION.equals( "9999"))
+		if(new Version(tum_tag_name).compareTo(new Version(Info.VERSION)) > 0)
+		{
+			return true;
+		}
+		return false;
+	}
+    public static String[] getUpdateInfos(String github_user,String github_project) {
+    	String ret = "";
+		String jsf = "git_jar_version.json";
+		Wget.wGet(jsf, "https://api.github.com/repos/" + github_user + "/" + github_project + "/releases/latest");
+		String tumjson=StreamUtil.readFile(jsf).replaceAll("\n", "");
+		JSONObject tum = new JSONObject(tumjson);
+		String tum_tag_name = tum.getString("tag_name");	
+		if(new Version(tum_tag_name).compareTo(new Version(Info.VERSION)) > 0)
 		{
 			ret += "New version: " + tum_tag_name + " available:\n";
 			ret += " - " + tum.getString("name") + "\n";
 			ret += "Current version: " + Info.VERSION;
+
+			return new String[] {tum_tag_name,tum.getString("name")};
 		}
+		return new String[] {};
 		
+    }
+
+    public static String getUpdateText(String github_user,String github_project) {
+    	String ret = "";
+		String jsf = "git_jar_version.json";
+		Wget.wGet(jsf, "https://api.github.com/repos/" + github_user + "/" + github_project + "/releases/latest");
+		String tumjson=StreamUtil.readFile(jsf).replaceAll("\n", "");
+		JSONObject tum = new JSONObject(tumjson);
+		String tum_tag_name = tum.getString("tag_name");	
+		if(new Version(tum_tag_name).compareTo(new Version(Info.VERSION)) > 0)
+		{
+			ret += "New version: " + tum_tag_name + " available:\n";
+			ret += " - " + tum.getString("name") + "\n";
+			ret += "Current version: " + Info.VERSION;
+
+		}
 		return ret;
-	}
+		
+    }
     
     public static void update(String fname, String github_user, String github_project)
 	{
