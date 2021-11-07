@@ -14,10 +14,10 @@ public class Version implements Comparable<Version> {
     public Version(String version) {
         if(version == null)
             throw new IllegalArgumentException("Version can not be null");
+        if(version.matches("v[0-9]+(\\.[0-9]+)*"))
+        	version = version.substring(1);
         if(!version.matches("[0-9]+(\\.[0-9]+)*"))
             throw new IllegalArgumentException("Invalid version format: " + version);
-        if(!version.matches("v[0-9]+(\\.[0-9]+)*"))
-        	version = version.substring(1);
         this.version = version;
     }
 
