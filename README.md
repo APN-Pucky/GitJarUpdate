@@ -1,3 +1,6 @@
+[![](https://jitpack.io/v/APN-Pucky/GitJarUpdate.svg)](https://jitpack.io/#APN-Pucky/GitJarUpdate)
+
+
 # GitJarUpdate
 Presents a popup at the start of a program when there is a new Github Release.  Then restarts the updated program.
 ## Usage
