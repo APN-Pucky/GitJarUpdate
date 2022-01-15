@@ -34,7 +34,7 @@ build.gradle
           with jar
         }
 ```
-At the start of your program run:
+At the start of your program run in your Java code:
 ```java
 Update.loadUpdate("PROJECTNAME-all.jar", "GITHUBUSER", "GITHUBPROJECTNAME");
 ```
