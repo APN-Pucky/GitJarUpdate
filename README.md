@@ -36,7 +36,7 @@ build.gradle
 ```
 At the start of your program run in your Java code:
 ```java
-Update.loadUpdate("PROJECTNAME-all.jar", "GITHUBUSER", "GITHUBPROJECTNAME");
+Update.loadUpdate("PROJECTNAME.jar", "GITHUBUSER", "GITHUBPROJECTNAME");
 ```
 
 An example with github actions publishing jar files is ![TeXCalc](https://github.com/APN-Pucky/TeXCalc).
