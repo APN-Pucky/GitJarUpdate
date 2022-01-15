@@ -25,7 +25,7 @@ build.gradle
         	  'Implementation-Version': versionDetails().lastTag,
         	  'Main-Class': 'YOUR.MAIN.CLASS.HERE'
           }
-          baseName = project.name + '-all'
+          baseName = project.name
           from { 
             configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }{
             //disable signing from 3rd party
