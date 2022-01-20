@@ -25,7 +25,7 @@ build.gradle
         	  'Implementation-Version': versionDetails().lastTag,
         	  'Main-Class': 'YOUR.MAIN.CLASS.HERE'
           }
-          baseName = project.name + '-all'
+          baseName = project.name
           from { 
             configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }{
             //disable signing from 3rd party
@@ -34,9 +34,9 @@ build.gradle
           with jar
         }
 ```
-At the start of your program run:
+At the start of your program run in your Java code:
 ```java
-Update.loadUpdate("PROJECTNAME-all.jar", "GITHUBUSER", "GITHUBPROJECTNAME");
+Update.loadUpdate("PROJECTNAME.jar", "GITHUBUSER", "GITHUBPROJECTNAME");
 ```
 
 An example with github actions publishing jar files is ![TeXCalc](https://github.com/APN-Pucky/TeXCalc).
