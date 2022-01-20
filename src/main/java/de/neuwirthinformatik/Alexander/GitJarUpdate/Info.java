@@ -15,7 +15,7 @@ public class Info {
 	public static OS os = detectOS();
 	public static String VERSION = detectVersions();
 
-	private static OS detectOS() {
+	public static OS detectOS() {
 		//detect os
 		String OpS = System.getProperty("os.name").toLowerCase();
 		
